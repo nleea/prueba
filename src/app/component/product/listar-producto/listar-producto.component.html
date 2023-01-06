@@ -1,0 +1,31 @@
+<table class="table table-white table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of ELEMENT_DATA">
+            <th scope="row">{{product._id}}</th>
+            <td>{{product.precio}}</td>
+            <td>{{product.nombre}}</td>
+            <td>{{product.categoria.nombre}}</td>
+            <td>
+                <button class="btn btn-warning mx-2" [routerLink]="['/productos/update/',product._id]">
+                    <i class="bi bi-pencil-square"></i>
+                </button>
+                <button class="btn btn-danger">
+                    <i class="bi bi-trash3-fill" (click)="deleteProducto(product._id)" ></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+
+    <div class="card-footer my-3">
+        <button class="btn btn-success" routerLink="/productos/add">Add</button>
+    </div>
+</table>

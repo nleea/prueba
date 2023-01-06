@@ -1,0 +1,17 @@
+<div class="conatiner card-add mx-auto my-5">
+    <div class="card">
+        <div class="card-header">
+            Agregar una categoria
+        </div>
+        <div class="card-body">
+            <form [formGroup]="formulariocategory" (ngSubmit)="AddCategory()">
+                <input type="text" class="form-control my-2" formControlName="nombre" placeholder="name" [class.is-invalid]="formulariocategory.get('nombre')?.touched && formulariocategory.get('nombre')?.invalid">
+                <select class="form-select my-2" aria-label="Default select example" formControlName="usuario">
+                    <option  *ngFor="let item of users" [value]="item.uid">{{item.nombre}}</option>
+                </select>
+                <button class="btn btn-success mx-3 w-50 my-3" type="submit">Send</button>
+                <button class="btn btn-danger  mx-3 w-50 my-3" routerLink="/categorias/list">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

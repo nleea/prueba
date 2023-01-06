@@ -1,0 +1,15 @@
+<div class="conatiner card-add mx-auto my-5">
+    <div class="card">
+        <div class="card-header">
+            Actualizar una categoria
+        </div>
+        <div class="card-body">
+            <form [formGroup]="formulariocategory" (ngSubmit)="updateCategory()" >
+                <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre" [class.is-invalid]="formulariocategory.get('nombre')?.touched && formulariocategory.get('nombre')?.invalid">
+
+                <button class="btn btn-success mx-3 w-25 my-3" type="submit">Send</button>
+                <button class="btn btn-danger  mx-3 w-25 my-3" routerLink="/categorias/list">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

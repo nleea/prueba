@@ -1,0 +1,33 @@
+<table class="table table-white table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Correo</th>
+            <th scope="col">rol</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let usuario of ELEMENT_DATA">
+            <th scope="row">{{usuario.uid}}</th>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.correo}}</td>
+            <td>{{usuario.rol}}</td>
+
+            <td>
+                <button class="btn btn-warning mx-2" [routerLink]="['/usuarios/update/',usuario.uid]">
+                    <i class="bi bi-pencil-square"></i>
+                </button>
+                <button class="btn btn-danger">
+                    <i class="bi bi-trash3-fill"  (click)="deleteUsuario(usuario.uid)"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+
+    <div class="card-footer my-3">
+        <button class="btn btn-success" routerLink="/usuarios/add">Add</button>
+    </div>
+</table>

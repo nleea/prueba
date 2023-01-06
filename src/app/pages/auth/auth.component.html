@@ -1,0 +1,15 @@
+<div class="conatiner w-25 mx-auto my-5">
+    <div class="card">
+        <div class="card-header">
+            Agregar una categoria
+        </div>
+        <div class="card-body">
+            <form [formGroup]="formularioLogin" (ngSubmit)="login()" >
+                <input type="text" class="form-control my-2" formControlName="correo" placeholder="Correo" [class.is-invalid]="formularioLogin.get('correo')?.touched && formularioLogin.get('correo')?.invalid">
+                <input type="text" class="form-control my-2" formControlName="password" placeholder="password" [class.is-invalid]="formularioLogin.get('password')?.touched && formularioLogin.get('password')?.invalid">
+
+                <button class="btn btn-success mx-3 w-25 my-3" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

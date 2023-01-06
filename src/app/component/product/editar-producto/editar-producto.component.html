@@ -1,0 +1,15 @@
+<div class="conatiner card-add mx-auto my-5">
+    <div class="card">
+        <div class="card-header">
+            Editar Producto
+        </div>
+        <div class="card-body">
+            <form [formGroup]="formularioProducto" (submit)="editarProducto()" >
+                <input type="text" class="form-control my-2" formControlName="nombre" placeholder="name" [class.is-invalid]="formularioProducto.get('nombre')?.touched && formularioProducto.get('nombre')?.invalid">
+                <input type="text" class="form-control my-2" formControlName="precio" placeholder="precio" [class.is-invalid]="formularioProducto.get('precio')?.touched && formularioProducto.get('precio')?.invalid">
+                <button class="btn btn-success mx-3 w-25 my-3" type="submit">Send</button>
+                <button class="btn btn-danger mx-3 w-25 my-3" routerLink="/productos/list">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

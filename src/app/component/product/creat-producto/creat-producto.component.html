@@ -1,0 +1,18 @@
+<div class="conatiner card-add mx-auto my-5">
+    <div class="card">
+        <div class="card-header">
+            Agregar un Producto
+        </div>
+        <div class="card-body">
+            <form [formGroup]="formulariocategory" (ngSubmit)="AddProduct()">
+                <input type="text" class="form-control my-2" formControlName="nombre" placeholder="Nombre" [class.is-invalid]="formulariocategory.get('nombre')?.touched && formulariocategory.get('nombre')?.invalid">
+                <input type="number" class="form-control my-2" formControlName="precio" placeholder="Precio" [class.is-invalid]="formulariocategory.get('precio')?.touched && formulariocategory.get('precio')?.invalid">
+                <select class="form-select my-2" aria-label="Default select example" formControlName="categoria">
+                    <option  *ngFor="let item of categoria" [value]="item._id">{{item.nombre}}</option>
+                </select>
+                <button class="btn btn-success mx-3 w-25 my-3" type="submit">Send</button>
+                <button class="btn btn-danger  mx-3 w-25 my-3" routerLink="/categorias/list">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

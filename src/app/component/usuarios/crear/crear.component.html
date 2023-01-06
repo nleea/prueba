@@ -1,0 +1,19 @@
+<div class="conatiner card-add mx-auto my-5">
+    <div class="card">
+        <div class="card-header">
+            Agregar usuario
+        </div>
+        <div class="card-body">
+            <form [formGroup]="formularioUsuario" (ngSubmit)="createUsuario()">
+                <input type="text" class="form-control my-2" required formControlName="nombre" placeholder="name" [class.is-invalid]="formularioUsuario.get('nombre')?.touched && formularioUsuario.get('nombre')?.invalid">
+                <input type="text" class="form-control my-2" required formControlName="correo" placeholder="correo" [class.is-invalid]="formularioUsuario.get('correo')?.touched && formularioUsuario.get('correo')?.invalid">
+                <input type="password" class="form-control my-2" required formControlName="password" placeholder="password" [class.is-invalid]="formularioUsuario.get('password')?.touched && formularioUsuario.get('password')?.invalid">
+                <input type="text" class="form-control my-2" required formControlName="rol" placeholder="rol" [class.is-invalid]="formularioUsuario.get('rol')?.touched && formularioUsuario.get('rol')?.invalid">
+
+
+                <button class="btn btn-success mx-3 w-25 my-3" type="submit">Send</button>
+                <button class="btn btn-danger" routerLink="/usuarios/list">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
